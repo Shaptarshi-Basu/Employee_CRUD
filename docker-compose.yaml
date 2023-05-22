@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: basu
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: employeedb
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
